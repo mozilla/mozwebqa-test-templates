@@ -49,6 +49,7 @@ class TestTemplate(unittest.TestCase):
         self.selenium = selenium(ConnectionParameters.server, ConnectionParameters.port,
                     ConnectionParameters.browser, ConnectionParameters.baseurl)
         self.selenium.start()
+        self.selenium.set_timeout(vars.ConncetionParameters.page_load_timeout)
 
     def tearDown(self):
         self.selenium.stop()
