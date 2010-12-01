@@ -41,6 +41,7 @@ from selenium import selenium
 from vars import ConnectionParameters
 from page import Page
 
+
 class MySiteHomePage(Page):
 
     _some_locator = 'id=someLocator'
@@ -62,5 +63,3 @@ class MySiteHomePage(Page):
 
     def do_something_on_the_page(self):
         pass
-
-
