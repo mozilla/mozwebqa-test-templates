@@ -47,10 +47,7 @@ class MySiteHomePage(Page):
     _some_locator = 'id=someLocator'
 
     def __init__(self, selenium):
-        '''
-            Creates a new instance of the class and gets the page ready for testing
-        '''
-        super(Page, self).__init__(selenium)
+        ''' Creates a new instance of the class and gets the page ready for testing '''
         self.sel = selenium
 
     @property
