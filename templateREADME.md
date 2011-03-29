@@ -20,17 +20,22 @@ Run
 
 followed by
 
-    sudo pip install nose
-    sudo pip install selenium
+    sudo pip install -r requirements/mozwebqa
+
+__note__
+
+if you are running on Debian or Ubuntu you may need to do 
+    
+    sudo apt-get install python-setuptools
     
 to install the required Python libraries.
 
 ### Selenium
-Once this is all set up you will need to download and start a Selenium server. You can download the latest Selenium server from [here][Selenium Downloads]. The filename will be something like 'selenium-server-standalone-2.0b1.jar'
+Once this is all set up you will need to download and start a Selenium server. You can download the latest Selenium server from [here][Selenium Downloads]. The filename will be something like 'selenium-server-standalone-2.0b3.jar'
 
 To start the Selenium server run the following command:
 
-    java -jar ~/Downloads/selenium-server-standalone-2.0b1.jar
+    java -jar ~/Downloads/selenium-server-standalone-2.0b3.jar
 
 Change the path/name to the downloaded Selenium server file.
 
