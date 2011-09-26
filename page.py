@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#
+
 # ***** BEGIN LICENSE BLOCK *****
 # Version: MPL 1.1/GPL 2.0/LGPL 2.1
 #
@@ -13,16 +13,17 @@
 # for the specific language governing rights and limitations under the
 # License.
 #
-# The Original Code is Firefox Input 
+# The Original Code is Mozilla WebQA Tests.
 #
-# The Initial Developer of the Original Code is
-# Mozilla Corp.
-# Portions created by the Initial Developer are Copyright (C) 2010
+# The Initial Developer of the Original Code is Mozilla.
+#
+# Portions created by the Initial Developer are Copyright (C) 2011
 # the Initial Developer. All Rights Reserved.
 #
-# Contributor(s): Vishal
-#                 Dave Hunt
-#                 David Burns
+# Contributor(s):
+#   Vishal
+#   Dave Hunt <dhunt@mozilla.com>
+#   David Burns
 #
 # Alternatively, the contents of this file may be used under the terms of
 # either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -37,10 +38,8 @@
 # the terms of any one of the MPL, the GPL or the LGPL.
 #
 # ***** END LICENSE BLOCK *****
-'''
-Created on Jun 21, 2010
 
-'''
+
 import re
 import time
 import vars
