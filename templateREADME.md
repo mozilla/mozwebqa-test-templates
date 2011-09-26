@@ -1,7 +1,7 @@
-<Insert Project Name>
+<PROJECT_NAME>
 =====================
 
-Automated tests for the <Insert Project Name> web application.
+Automated tests for the <PROJECT_NAME> web application.
 
 Running Tests
 -------------
@@ -12,15 +12,28 @@ You will need a version of the [Java Runtime Environment][JRE] installed
 [JRE]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 ### Python
-Before you will be able to run these tests you will need to have Python 2.6 installed.
+Before you will be able to run these tests you will need to have Python 2.6
+installed.
 
-Run
+__note__
 
-    easy_install pip
+The below instructions will install the required Python libraries into your
+global Python installation. If you work on multiple Python projects that might
+end up needing different versions of the same libraries, you might want to
+follow `sudo easy_install pip` with `sudo pip install virtualenv`, and then
+create and activate a [virtualenv](http://www.virtualenv.org) (e.g. `virtualenv
+<PROJECT_NAME>-tests-env; source <PROJECT_NAME>-tests-env/bin/activate`) to
+create a clean "virtual environment" for just this project. Then you can
+`pip install -r requiremenst/requirements.txt` in your virtual environment
+without needing to use `sudo`.
+
+If you don't mind installing globally, just run
+
+    sudo easy_install pip
 
 followed by
 
-    sudo pip install -r requirements/mozwebqa
+    sudo pip install -r <LOCATION_OF_REQUIREMENTS_FILE>
 
 __note__
 
@@ -31,23 +44,22 @@ if you are running on Debian or Ubuntu you may need to do
 to install the required Python libraries.
 
 ### Selenium
-Once this is all set up you will need to download and start a Selenium server. You can download the latest Selenium server from [here][Selenium Downloads]. The filename will be something like 'selenium-server-standalone-2.0b3.jar'
+Once this is all set up you will need to download and start a Selenium server. You can download the latest Selenium server from [here][Selenium Downloads]. The filename will be something like 'selenium-server-standalone-x.x.jar (where x.x is current shipping version)'
 
 To start the Selenium server run the following command:
 
-    java -jar ~/Downloads/selenium-server-standalone-2.0b3.jar
+    java -jar ~/Downloads/selenium-server-standalone-x.x.jar (where x.x is current shipping version)
 
 Change the path/name to the downloaded Selenium server file.
 
 [Selenium Downloads]: http://code.google.com/p/selenium/downloads/list
 
-### vars.py
-Edit the vars.py file to specify the browser you will want to run your tests in. Common values are *\*firefox*, *\*safari*, *\*iexplore*, *\*googlechrome*
-
 Once the above prerequisites have been met you can run the tests using the
 following command:
 
-    nosetests .
+    py.test --api=<SELENIUM_API> --baseurl=<BASE_URL> --browser=*firefox
+
+For other possible options, type `py.test --help`.
 
 Writing Tests
 -------------
@@ -80,9 +92,10 @@ This software is licensed under the [Mozilla Tri-License][MPL]:
     for the specific language governing rights and limitations under the
     License.
 
-    The Original Code is Mozilla WebQA Selenium Tests.
+    The Original Code is Mozilla WebQA Tests.
 
     The Initial Developer of the Original Code is Mozilla.
+
     Portions created by the Initial Developer are Copyright (C) 2011
     the Initial Developer. All Rights Reserved.
 
