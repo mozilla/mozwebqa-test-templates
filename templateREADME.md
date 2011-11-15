@@ -12,7 +12,7 @@ You will need a version of the [Java Runtime Environment][JRE] installed
 [JRE]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 ### Python
-Before you will be able to run these tests you will need to have Python 2.6
+Before you will be able to run these tests, you'll need to have Python 2.6
 installed.
 
 __note__
