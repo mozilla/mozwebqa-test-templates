@@ -12,7 +12,7 @@ You will need a version of the [Java Runtime Environment][JRE] installed
 [JRE]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 ### Python
-Before you will be able to run these tests you will need to have Python 2.6
+Before you will be able to run these tests, you'll need to have Python 2.6
 installed.
 
 __note__
@@ -27,17 +27,17 @@ create a clean "virtual environment" for just this project. Then you can
 `pip install -r requiremenst/requirements.txt` in your virtual environment
 without needing to use `sudo`.
 
-If you don't mind installing globally, just run
+If you don't mind installing globally, just run:
 
     sudo easy_install pip
 
-followed by
+followed by:
 
     sudo pip install -r <LOCATION_OF_REQUIREMENTS_FILE>
 
 __note__
 
-if you are running on Debian or Ubuntu you may need to do 
+if you are running on Debian or Ubuntu, you may need to do:
     
     sudo apt-get install python-setuptools
     
@@ -54,7 +54,7 @@ Change the path/name to the downloaded Selenium server file.
 
 [Selenium Downloads]: http://code.google.com/p/selenium/downloads/list
 
-Once the above prerequisites have been met you can run the tests using the
+Once the above prerequisites have been met, you can run the tests using the
 following command:
 
     py.test --api=<SELENIUM_API> --baseurl=<BASE_URL> --browser=*firefox
@@ -64,7 +64,7 @@ For other possible options, type `py.test --help`.
 Writing Tests
 -------------
 
-If you want to get involved and add more tests then there's just a few things
+If you want to get involved and add more tests, then there's just a few things
 we'd like to ask you to do:
 
 1. Use the [template files][GitHub Templates] for all new tests and page objects
