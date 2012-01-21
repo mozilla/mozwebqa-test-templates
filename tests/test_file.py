@@ -12,8 +12,20 @@ destructive = pytest.mark.destructive
 
 class TestTemplate(MySiteHomePage):
 
-    def test_that_we_do_something_to_find_a_bug(self, mozwebqa):
-        pass
+    def test_load_amo_assert_header(self, mozwebqa):
+        '''
+        Demo Test - Verify Header is correct on Amo Page
+        '''
+        home_page = MySiteHomePage(mozwebqa)
+        Assert.equal(home_page.amo_header, 'Add-ons')
+
+    @xfail(reason='templates demo xfail')
+    def test_load_amo_xfail(self, mozwebqa):
+        '''
+        Demo Test - Mark test failed if there known bug exist
+        '''
+        home_page = MySiteHomePage(mozwebqa)
+        Assert.equal(home_page.amo_header, 'BlaBla')
 
     @nondestructive
     def test_that_we_do_something_to_find_a(self, mozwebqa):
@@ -21,8 +33,4 @@ class TestTemplate(MySiteHomePage):
 
     @destructive
     def test_that_we_do_something_to_find(self, mozwebqa):
-        pass
-
-    @xfail
-    def test_that_we_do_something_to_(self, mozwebqa):
         pass

@@ -51,8 +51,7 @@ class Page(object):
         self.selenium.back()
 
     def get_url_current_page(self):
-        return(self.selenium.get_location())
+        return(self.selenium.current_url)
 
-    def refresh(self, timeout=80000):
+    def refresh(self):
         self.selenium.refresh()
-        self.selenium.wait_for_page_to_load(timeout)
