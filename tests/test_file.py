@@ -10,14 +10,14 @@ nondestructive = pytest.mark.nondestructive
 destructive = pytest.mark.destructive
 
 
-class TestTemplate(MySiteHomePage):
+class TestTemplate():
 
     def test_load_amo_assert_header(self, mozwebqa):
         '''
         Demo Test - Verify Header is correct on Amo Page
         '''
         home_page = MySiteHomePage(mozwebqa)
-        Assert.equal(home_page.amo_header, 'Add-ons')
+        Assert.equal(home_page.amo_header, 'ADD-ONS')
 
     @xfail(reason='templates demo xfail')
     def test_load_amo_xfail(self, mozwebqa):
