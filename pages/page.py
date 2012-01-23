@@ -18,7 +18,6 @@ class Page(object):
         self.testsetup = testsetup
         self.base_url = testsetup.base_url
         self.selenium = testsetup.selenium
-        self.timeout = testsetup.timeout
 
     @property
     def is_the_current_page(self):

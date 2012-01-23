@@ -11,19 +11,15 @@ class MySiteHomePage(Base):
     _some_locator_by_id = (By.ID, 'someLocator')
     _some_locator_by_css = (By.CSS_SELECTOR, '#someLocator')
     _some_locator_by_xpath = (By.XPATH, "//div[@id='someLocator']")
+    _some_elements_locator = (By.CSS_SELECTOR, 'li .someElementsLocator')
 
     # Demo locators
-    _amo_header_locator = (By.CSS_SELECTOR, '.site-title a')
-
-    def __init__(self, testsetup, open_url=True):
-        ''' Creates a new instance of the class and gets the page ready for testing '''
-        Base.__init__(self, testsetup)
-        if open_url:
-            self.selenium.get(self.base_url)
+    _page_title = "Home of the Mozilla Project"
+    _header_locator = (By.CSS_SELECTOR, '#header h1 a')
 
     @property
-    def amo_header_text(self):
-        return self.selenium.find_element(*self._amo_header_locator).text
+    def header_text(self):
+        return self.selenium.find_element(*self._header_locator).text
 
     @property
     def element_attribute(self):
@@ -31,15 +27,15 @@ class MySiteHomePage(Base):
 
     @property
     def elements_count(self):
-        return len(self.selenium.find_elements(*self._some_locator_by_css))
+        return len(self.selenium.find_elements(*self._some_locator_by_id))
 
     def click_on_element(self):
-        self.selenium.find_element(*self._some_locator_by_xpath).click()
+        self.selenium.find_element(*self._some_locator_by_id).click()
 
     @property
-    def elements_list(self):
+    def elements(self):
         return [self.ElementsList(self.testsetup, element)
-                for element in self.selenium.find_elements(*self._elements_list_locator)]
+                for element in self.selenium.find_elements(*self._some_elements_locator)]
 
     class ElementsList(Page):
         _link_locator = (By.CSS_SELECTOR, 'a')
