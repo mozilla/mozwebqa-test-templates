@@ -46,11 +46,5 @@ class Page(object):
         except NoSuchElementException, ElementNotVisibleException:
             return False
 
-    def return_to_previous_page(self):
-        self.selenium.back()
-
     def get_url_current_page(self):
         return(self.selenium.current_url)
-
-    def refresh(self):
-        self.selenium.refresh()

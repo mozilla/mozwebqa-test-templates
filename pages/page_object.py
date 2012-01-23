@@ -22,12 +22,8 @@ class MySiteHomePage(Base):
             self.selenium.get(self.base_url)
 
     @property
-    def amo_header(self):
+    def amo_header_text(self):
         return self.selenium.find_element(*self._amo_header_locator).text
-
-    @property
-    def element_text(self):
-        return self.selenium.find_element(*self._some_locator_by_id).text
 
     @property
     def element_attribute(self):
