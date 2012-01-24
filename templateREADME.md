@@ -28,7 +28,7 @@ follow `sudo easy_install pip` with `sudo pip install virtualenv`, and then
 create and activate a [virtualenv](http://www.virtualenv.org) (e.g. `virtualenv
 <PROJECT_NAME>-tests-env; source <PROJECT_NAME>-tests-env/bin/activate`) to
 create a clean "virtual environment" for just this project. Then you can
-`pip install -r requiremenst/requirements.txt` in your virtual environment
+`pip install -r requirements.txt` in your virtual environment
 without needing to use `sudo`.
 
 If you don't mind installing globally, just run:
@@ -37,7 +37,7 @@ If you don't mind installing globally, just run:
 
 followed by:
 
-    sudo pip install -r <LOCATION_OF_REQUIREMENTS_FILE>
+    sudo pip install -r requirements.txt
 
 __note__
 
@@ -61,7 +61,7 @@ Change the path/name to the downloaded Selenium server file.
 Once the above prerequisites have been met, you can run the tests using the
 following command:
 
-    py.test --api=<SELENIUM_API> --baseurl=<BASE_URL> --browser=*firefox
+    py.test --browsername=*firefox --browserver=8 --platform=<LINUX|WINDOWS|MACOS>
 
 For other possible options, type `py.test --help`.
 
@@ -76,5 +76,5 @@ we'd like to ask you to do:
 3. Fork this project with your own GitHub account
 4. Make sure all tests are passing, and submit a pull request with your changes
 
-[GitHub Templates]: https://github.com/AutomatedTester/mozwebqa-test-templates
+[GitHub Templates]: https://github.com/mozilla/mozwebqa-test-templates
 [Style Guide]: https://wiki.mozilla.org/QA/Execution/Web_Testing/Docs/Automation/StyleGuide

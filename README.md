@@ -1,11 +1,13 @@
 Mozilla WebQA Test Templates
 ============================
 
-This repository holds templates for creating new tests so they can be used with Mozilla Selenium projects.
+This repository holds a template of Mozilla's framework for creating WebDriver tests.
 
-## test_file.py
-This contains a template to create a test file to hold test cases
+The framework has been developed by Mozilla and is used across many of our automated
+testing projects. It is designed to provide clear page objects and readable tests.
 
-## page_object.py
-This contains a template to create a Page Objects for a project
+The template doubles as a working, albeit very basic, test suite which can gives
+you a working base to build on from the moment you checkout the template.
 
+For further information and tutorials consult the wiki on github:
+https://github.com/mozilla/mozwebqa-test-templates/wiki
