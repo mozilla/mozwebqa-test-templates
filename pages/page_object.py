@@ -19,6 +19,7 @@ class MySiteHomePage(Base):
     # Demo locators
     _page_title = "Home of the Mozilla Project"
     _header_locator = (By.CSS_SELECTOR, '#header h1 a')
+    _home_news_locator = (By.ID, 'home-news-list')
 
     @property
     def header_text(self):
@@ -38,9 +39,10 @@ class MySiteHomePage(Base):
     @property
     def elements(self):
         return [self.ElementsList(self.testsetup, element)
-                for element in self.selenium.find_elements(*self._some_elements_locator)]
+                for element in self.selenium.find_elements(*self._home_news_locator)]
 
     class ElementsList(Page):
+        _name_locator = (By.CSS_SELECTOR, 'li')
         _link_locator = (By.CSS_SELECTOR, 'a')
 
         def __init__(self, testsetup, element):
@@ -49,7 +51,7 @@ class MySiteHomePage(Base):
 
         @property
         def name(self):
-            return self._root_element.text
+            return self._root_element.find_element(*self._name_locator).text
 
         def click_link(self):
             self._root_element.find_element(*self._link_locator).click()
