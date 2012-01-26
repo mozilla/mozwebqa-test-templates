@@ -35,17 +35,17 @@ class MySiteHomePage(Base):
     def click_on_element(self):
         self.selenium.find_element(*self._some_locator_by_id).click()
 
-    @property
-    def elements(self):
-        return [self.ElementsList(self.testsetup, element)
-                for element in self.selenium.find_elements(*self._some_elements_locator)]
+    def news_item(self, lookup):
+        return self.NewsList(self.testsetup, lookup)
 
-    class ElementsList(Page):
+    class NewsList(Page):
+        _home_news_locator = (By.CSS_SELECTOR, '#home-news-list li')
         _link_locator = (By.CSS_SELECTOR, 'a')
 
-        def __init__(self, testsetup, element):
+        def __init__(self, testsetup, lookup):
             Page.__init__(self, testsetup)
-            self._root_element = element
+            self._root_element = self.selenium.find_element(By.CSS_SELECTOR,
+                                          "%s:nth-child(%s)" % (self._home_news_locator[1], lookup))
 
         @property
         def name(self):
