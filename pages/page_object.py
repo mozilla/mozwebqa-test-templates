@@ -19,7 +19,6 @@ class MySiteHomePage(Base):
     # Demo locators
     _page_title = "Home of the Mozilla Project"
     _header_locator = (By.CSS_SELECTOR, '#header h1 a')
-    _home_news_locator = (By.ID, 'home-news-list')
 
     @property
     def header_text(self):
@@ -36,22 +35,21 @@ class MySiteHomePage(Base):
     def click_on_element(self):
         self.selenium.find_element(*self._some_locator_by_id).click()
 
-    @property
-    def elements(self):
-        return [self.ElementsList(self.testsetup, element)
-                for element in self.selenium.find_elements(*self._home_news_locator)]
+    def news_item(self, lookup):
+        return self.NewsList(self.testsetup, lookup)
 
-    class ElementsList(Page):
-        _name_locator = (By.CSS_SELECTOR, 'li')
+    class NewsList(Page):
+        _home_news_locator = (By.CSS_SELECTOR, '#home-news-list li')
         _link_locator = (By.CSS_SELECTOR, 'a')
 
-        def __init__(self, testsetup, element):
+        def __init__(self, testsetup, lookup):
             Page.__init__(self, testsetup)
-            self._root_element = element
+            self._root_element = self.selenium.find_element(By.CSS_SELECTOR,
+                                          "%s:nth-child(%s)" % (self._home_news_locator[1], lookup))
 
         @property
         def name(self):
-            return self._root_element.find_element(*self._name_locator).text
+            return self._root_element.text
 
         def click_link(self):
             self._root_element.find_element(*self._link_locator).click()
