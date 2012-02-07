@@ -14,7 +14,8 @@ class TestNonDestructive():
     @pytest.mark.nondestructive
     def test_load_baseurl_nondestructive(self, mozwebqa):
         '''
-        Demo Test - Mark test failed if there known bug exist
+        This test is nondestructive - it does not write
+        to the database or leave a mark on the website
         '''
         home_page = MySiteHomePage(mozwebqa)
         home_page.go_to_home_page()
