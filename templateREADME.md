@@ -37,7 +37,7 @@ If you don't already have it installed, please install [Python 2.6]
 
 ### Cloning the test repository with Git
 
-After you have installed [Git] you will need to clone the project to your hard drive. From your workspace directory run this command:
+After you have installed [Git] you will need to clone the project to your hard drive. From your workspace directory run this command which will copy (clone) the project to your hard drive
 
     git clone --recursive git://github.com/mozilla/<project>.git
 [Git]: http://en.wikipedia.org/wiki/Git_%28software%29
@@ -47,6 +47,10 @@ You will need to install Selenium, unittestzero and some other project specific 
 
     sudo easy_install pip
     
+Now using pip let's install the packages we need (which are listed in requirements.txt)
+
+    sudo easy_install pip
+
 Now using pip let's install the packages we need (which are listed in requirements.txt)
 
     pip install -Ur requirements.txt    
