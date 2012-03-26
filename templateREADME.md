@@ -1,7 +1,7 @@
 ##PROJECT_NAME
 =====================
-Thank you for checking out Mozilla's PROJECT_NAME test suite. Mozilla and the Mozwebqa team are grateful for the help and hard work of many contributors like yourself.
-The following contributors have submitted pull requests to PROJECT_NAME:
+Thank you for checking out Mozilla's PROJECT_NAME test suite. Mozilla and the Web QA team are grateful for the help and hard work of many contributors like yourself.
+The following contributors have contributed to PROJECT_NAME:
 
 https://github.com/mozilla/PROJECT_NAME/contributors
 
@@ -21,7 +21,7 @@ If you need to brush up on programming but are eager to start contributing immed
 
 Questions are always welcome
 ----------------------------
-While we take pains to keep our documentation updated, the best source of information is those of us who work on the project.  Don't be afraid to join us in irc.mozilla.org #mozwebqa to ask questions about our Selenium tests.  Mozilla also hosts the #mozillians chat room to answer your general questions about contributing to Mozilla.
+While we take pains to keep our documentation updated, the best source of information is those of us who work on the project.  Don't be afraid to join us in irc.mozilla.org #[mozwebqa] to ask questions about our Selenium tests.  Mozilla also hosts the #[mozillians] chat room to answer your general questions about contributing to Mozilla.
 
 [mozwebqa]:http://02.chat.mibbit.com/?server=irc.mozilla.org&channel=#mozwebqa
 [mozillians]:http://02.chat.mibbit.com/?server=irc.mozilla.org&channel=#mozillians
@@ -42,13 +42,13 @@ After you have installed [Git] you will need to clone the project to your hard d
 [Git]: http://en.wikipedia.org/wiki/Git_%28software%29
 
 ### Installing Python packages
-You will need to install Selenium, Mozwebqa's py.test plugin, unittestzero and some other project specific packages. Fortunately `pip` makes it easy to install all of these in one step. Let's start by installing pip:
+You will need to install Selenium, py.test, unittestzero and some other project specific packages. Fortunately `pip` makes it easy to install all of these in one step. Let's start by installing pip:
 
     sudo easy_install pip
     
 Now using pip we'll install the packages we need (which are listed in requirements.txt)
 
-    pip install -Ur requirements.txt    
+    pip install -Ur requirements.txt --use-mirrors
 
 __Optional/Intermediate level__
 
@@ -63,11 +63,12 @@ Running Tests
 Once the above prerequisites have been met, you can run the tests using the
 following command:
 
-    py.test --driver=firefox --browserver=<VERSION> --platform=<LINUX|WINDOWS|MACOS>
+    py.test --driver=firefox
 
 This command will locate your firefox install, load it and run the tests against it.
 
-For other possible options, type `py.test --help`.
+For other possible options, type `py.test --help` or view the [readme].
+[readme]: https://github.com/davehunt/pytest-mozwebqa/blob/master/README.md
 
 __Optional/Intermediate level__
 
@@ -78,7 +79,8 @@ Some projects require user (login) credentials to be given so the test can log i
 3. Use the parameter `--credentials=/full/path/to/credentials.yaml` when running the tests
 
 ##### Destructive
-To avoid accidentally running tests that write data to the website you must declare `--destructive` to run the tests.
+By default only tests that do not write data to the website or database will be run.
+To run tests that write data to the website you must declare `--destructive` at the command line.
 
 ##### Selenium Grid
 If testing across networks, operating systems and multiple browsers is your deed then it's a Selenium Grid you need.
