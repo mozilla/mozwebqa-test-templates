@@ -76,7 +76,9 @@ __Optional/Intermediate level__
 Some projects require user (login) credentials to be given so the test can log in and log out.
 
 1. Create a user account on the site/environment you are testing.
+
 2. Copy the credentials.yaml into a different folder and replace the values inside with your user account.
+
 3. Use the parameter `--credentials=/full/path/to/credentials.yaml` when running the tests
 
 ##### Destructive
