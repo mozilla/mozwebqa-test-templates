@@ -32,20 +32,23 @@ This test suite uses Selenium's WebDriver, Python 2.6.6 and two custom packages
 that the Mozilla Web QA team has created.
 
 ### Install Python
-1. If you don't already have it installed, please install [Python 2.6]
+If you don't already have it installed, please install [Python 2.6]
 [Python 2.6]: http://www.python.org/download/releases/2.6.6/
 
 ### Cloning the test repository with Git
 
-2. After you have installed [Git] you will need to close the project to your hard drive. From your workspace directory run this command:
+After you have installed [Git] you will need to clone the project to your hard drive. From your workspace directory run this command:
+
     git clone --recursive git://github.com/mozilla/<project>.git
 [Git]: http://en.wikipedia.org/wiki/Git_%28software%29
 
 ### Installing Python packages
-3. You will need to install Selenium, unittestzero and some other project specific packages. Fortunately `pip` makes it easy to install all of these in one step. Let's install pip:
+You will need to install Selenium, unittestzero and some other project specific packages. Fortunately `pip` makes it easy to install all of these in one step. Let's install pip:
+
     sudo easy_install pip
     
-4. Now using pip let's install the packages we need (which are listed in requirements.txt)
+Now using pip let's install the packages we need (which are listed in requirements.txt)
+
     pip install -Ur requirements.txt    
 
 __Optional/Intermediate level__
