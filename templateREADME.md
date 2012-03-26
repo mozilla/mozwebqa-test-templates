@@ -1,13 +1,13 @@
 ##PROJECT_NAME
 =====================
-Thank you for checking out Mozilla's <PROJECT_NAME> test suite. Mozilla and the Mozwebqa team are grateful for the help and hard work of many contributors like yourself.
-The following contributors have submitted pull requests to <PROJECT_NAME>:
+Thank you for checking out Mozilla's PROJECT_NAME test suite. Mozilla and the Mozwebqa team are grateful for the help and hard work of many contributors like yourself.
+The following contributors have submitted pull requests to PROJECT_NAME:
 
-https://github.com/mozilla/<PROJECT_NAME>/contributors
+https://github.com/mozilla/PROJECT_NAME/contributors
 
 Getting involved as a contributor
 ------------------------------------------
-We love working with contributors to fill out the Selenium test coverage for <PROJECT_NAME>, but it does require a few skills. You will need to know some Python, some Selenium and you will need some basic familiarity with Github.
+We love working with contributors to fill out the Selenium test coverage for PROJECT_NAME, but it does require a few skills. You will need to know some Python, some Selenium and you will need some basic familiarity with Github.
 
 If you know some Python, it's worth having a look at the Selenium framework to understand the basic concepts of browser based testing and especially page objects. Our suite uses [Selenium WebDriver][webdriver].
 
@@ -38,7 +38,7 @@ If you don't already have it installed, please install [Python 2.6]
 
 After you have installed [Git] you will need to clone the project to your hard drive. From your workspace directory run this command which will copy (clone) the project to your hard drive
 
-    git clone --recursive git://github.com/mozilla/<project>.git
+    git clone --recursive git://github.com/mozilla/PROJECT_NAME.git
 [Git]: http://en.wikipedia.org/wiki/Git_%28software%29
 
 ### Installing Python packages
@@ -52,6 +52,7 @@ Now using pip we'll install the packages we need (which are listed in requiremen
 
 __Optional/Intermediate level__
 
+##### Virtual Environments
 Step 2 above installs the packages globally on your operating system. Using `virtualenv` you can sandbox Python packages into virtual environments for each Mozilla project you work on. Follow our [Virtual Env guide] to get a virtual environment up and running.
 [Virtual Env guide]: https://wiki.mozilla.org/QA/Execution/Web_Testing/Automation/Virtual_Environments
 
@@ -70,20 +71,20 @@ For other possible options, type `py.test --help`.
 
 __Optional/Intermediate level__
 
-###### Credentials
+##### Credentials
 Some projects require user (login) credentials to be given so the test can log in and log out.
 1. Create a user account on the site/environment you are testing.
 2. Copy the credentials.yaml into a different folder and replace the values inside with your user account.
 3. Use the parameter `--credentials=/full/path/to/credentials.yaml` when running the tests
 
-###### Destructive
+##### Destructive
 To avoid accidentally running tests that write data to the website you must declare `--destructive` to run the tests.
 
-###### Selenium Grid
-For testing across networks, operating systems and multiple browsers a Selenium Grid
+##### Selenium Grid
+If testing across networks, operating systems and multiple browsers is your deed then it's a Selenium Grid you need.
 Follow our quick start guide to get [Selenium Grid] up and running.
 
-[Selenium Grid] https://github.com/mozilla/moz-grid-config/wiki/Quick-Start
+[Selenium Grid]: https://github.com/mozilla/moz-grid-config/wiki/Quick-Start
 
 Writing Tests
 -------------
