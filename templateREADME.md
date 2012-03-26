@@ -52,6 +52,7 @@ Now using pip let's install the packages we need (which are listed in requiremen
     pip install -Ur requirements.txt    
 
 __Optional/Intermediate level__
+
 Step 2 above installs the packages globally on your operating system. Using `virtualenv` you can sandbox Python packages into virtual environments for each Mozilla project you work on. Follow our [Virtual Env guide] to get a virtual environment up and running.
 [Virtual Env guide]: https://wiki.mozilla.org/QA/Execution/Web_Testing/Automation/Virtual_Environments
 
@@ -69,6 +70,7 @@ This command will locate your firefox install, load it and run the tests against
 For other possible options, type `py.test --help`.
 
 __Optional/Intermediate level__
+
 Follow our quick start guide to get [Selenium Grid] up and running.
 
 [Selenium Grid] https://github.com/mozilla/moz-grid-config/wiki/Quick-Start
