@@ -53,7 +53,7 @@ Now using pip we'll install the packages we need (which are listed in requiremen
 __Optional/Intermediate level__
 
 ##### Virtual Environments
-Step 2 above installs the packages globally on your operating system. Using `virtualenv` you can sandbox Python packages into virtual environments for each Mozilla project you work on. Follow our [Virtual Env guide] to get a virtual environment up and running.
+The step above installs the packages globally on your operating system. Using `virtualenv` you can sandbox Python packages into virtual environments for each Mozilla project you work on. Follow our [Virtual Env guide] to get a virtual environment up and running. We recommend this practice.
 [Virtual Env guide]: https://wiki.mozilla.org/QA/Execution/Web_Testing/Automation/Virtual_Environments
 
 Running Tests
