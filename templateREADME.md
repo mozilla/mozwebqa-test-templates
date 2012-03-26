@@ -1,4 +1,4 @@
-<PROJECT_NAME>
+###<PROJECT_NAME>
 =====================
 Thank you for checking out Mozilla's <PROJECT_NAME> test suite. Mozilla and the Mozwebqa team are grateful for the help and hard work of many contributors like yourself.
 The following contributors have submitted pull requests to <PROJECT_NAME>:
