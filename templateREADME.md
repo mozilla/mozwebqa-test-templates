@@ -65,7 +65,7 @@ following command:
 
     py.test --driver=firefox
 
-This command will locate your iFrefox install, load it and run the tests against it.
+This command will locate your Firefox install, load it and run the tests against it.
 
 For other possible options, type `py.test --help` or view the [readme].
 [readme]: https://github.com/davehunt/pytest-mozwebqa/blob/master/README.md
