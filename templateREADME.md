@@ -7,11 +7,11 @@ https://github.com/mozilla/PROJECT_NAME/contributors
 
 Getting involved as a contributor
 ------------------------------------------
-We love working with contributors to fill out the Selenium test coverage for PROJECT_NAME, but it does require a few skills. You will need to know some Python, some Selenium and you will need some basic familiarity with Github.
+We love working with contributors to fill out the Selenium test coverage for PROJECT_NAME, but it does require a few skills. You will need to know some Python, some Selenium and a basic familiarity with GitHub.
 
 If you know some Python, it's worth having a look at the Selenium framework to understand the basic concepts of browser based testing and especially page objects. Our suite uses [Selenium WebDriver][webdriver].
 
-If you need to brush up on programming but are eager to start contributing immediately, please consider helping us find bugs in Mozilla [Firefox][firefox] or find bugs in the Mozilla web-sites tested by the [WebQA][webqa] team. To brush up on Python skills before engaging with us, [Dive Into Python][dive] is an excellent resource. MIT also has [lecture notes on Python][mit] available through their open courseware.The programming concepts you will need to know include functions, working with classes, and some object oriented programming basics. 
+If you need to brush-up on programming, but are eager to start contributing immediately, please consider helping us find bugs in Mozilla [Firefox][firefox] or find bugs in the Mozilla websites tested by the [WebQA][webqa] team. To brush up on Python skills before engaging with us, [Dive Into Python][dive] is an excellent resource. MIT also has [lecture notes on Python][mit] available through their OpenCourseWare.  The programming concepts you will need to know include functions, working with classes, and some object-oriented programming basics. 
 
 [mit]: http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/
 [dive]: http://www.diveintopython.net/toc/index.html
@@ -26,9 +26,9 @@ While we take pains to keep our documentation updated, the best source of inform
 [mozwebqa]:http://02.chat.mibbit.com/?server=irc.mozilla.org&channel=#mozwebqa
 [mozillians]:http://02.chat.mibbit.com/?server=irc.mozilla.org&channel=#mozillians
 
-Getting setup
+Getting set up
 -------------
-It's easy to get setup, just two pieces of software to install and in 5 command lines you'll be running the tests!
+It's easy to get set up: just 2 pieces of software to install and in 5 command lines you'll be running the tests!
 
 ### Install Python
 If you don't already have it installed, please install [Python 2.6]
@@ -65,7 +65,7 @@ following command:
 
     py.test --driver=firefox
 
-This command will locate your firefox install, load it and run the tests against it.
+This command will locate your iFrefox install, load it and run the tests against it.
 
 For other possible options, type `py.test --help` or view the [readme].
 [readme]: https://github.com/davehunt/pytest-mozwebqa/blob/master/README.md
@@ -82,11 +82,11 @@ Some projects require user (login) credentials to be given so the test can log i
 3. Use the parameter `--credentials=/full/path/to/credentials.yaml` when running the tests
 
 ##### Destructive
-By default only tests that do not write data to the website or database will be run.
+By default, only tests that do not write data to the website or database will be run.
 To run tests that write data to the website you must declare `--destructive` at the command line.
 
 ##### Selenium Grid
-If testing across networks, operating systems and multiple browsers is your deed then it's a Selenium Grid you need.
+If testing across networks, operating systems and multiple browsers is your deed, then it's a Selenium Grid you need!
 Follow our quick start guide to get [Selenium Grid] up and running.
 
 [Selenium Grid]: https://github.com/mozilla/moz-grid-config/wiki/Quick-Start
