@@ -11,6 +11,7 @@ from pages.page_object import MySiteHomePage
 
 class TestXfail():
 
+    @pytest.mark.nondestructive
     @pytest.mark.xfail(reason='Header text is incorrect')
     def test_load_baseurl_xfail(self, mozwebqa):
         '''
@@ -21,6 +22,7 @@ class TestXfail():
         home_page.go_to_home_page()
         Assert.equal(home_page.header_text, 'BlaBla')
 
+    @pytest.mark.nondestructive
     @pytest.mark.xfail
     def test_that_we_do_something_to_find_a_bug(self, mozwebqa):
         '''
