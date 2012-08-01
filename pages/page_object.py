@@ -17,8 +17,8 @@ class MySiteHomePage(Base):
     _some_elements_locator = (By.CSS_SELECTOR, 'li .someElementsLocator')
 
     # Demo locators
-    _page_title = "Home of the Mozilla Project"
-    _header_locator = (By.CSS_SELECTOR, '#header h1 a')
+    _page_title = u"Mozilla \u2014 Home of the Mozilla Project \u2014 mozilla.org"
+    _header_locator = (By.CSS_SELECTOR, 'h1')
 
     @property
     def header_text(self):

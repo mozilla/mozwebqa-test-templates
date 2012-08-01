@@ -13,13 +13,18 @@ class TestNonDestructive():
 
     @pytest.mark.nondestructive
     def test_load_baseurl_nondestructive(self, mozwebqa):
-        '''
+        """
         This test is nondestructive - it does not write
         to the database or leave a mark on the website
-        '''
+        """
         home_page = MySiteHomePage(mozwebqa)
         home_page.go_to_home_page()
         Assert.true(home_page.is_the_current_page)
 
-    def test_that_we_do_something_to_find_a_bug(self, mozwebqa):
+    def test_load_baseurl_destructive(self, mozwebqa):
+        """
+        This test is *not* marked as nondestructive and
+        will be automatically skipped when run against
+        a sensitive (ie Production) URL
+        """
         pass
