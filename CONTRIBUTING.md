@@ -22,7 +22,7 @@ If you encounter any problems with any of the steps from above or just are in a 
 
 Some things that will increase the chance that your pull request is accepted:
 
-* Ensure that your code conforms to our [Style Guide](https://wiki.mozilla.org/QA/Execution/Web_Testing/Docs/Automation/StyleGuide).A very useful tool for checking your code is the [Python style guide checker](http://pypi.python.org/pypi/pep8).
+* Ensure that your code conforms to our [Style Guide](https://wiki.mozilla.org/QA/Execution/Web_Testing/Docs/Automation/StyleGuide). A very useful tool for checking your code is the [Python style guide checker](http://pypi.python.org/pypi/pep8).
 * Check the [Web QA team page](https://quality.mozilla.org/teams/web-qa/) for more info.
 
 And in case we didn't emphasize it enough: we love contributions!
