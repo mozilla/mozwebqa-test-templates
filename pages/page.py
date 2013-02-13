@@ -45,7 +45,7 @@ class Page(object):
     def is_element_visible(self, *locator):
         try:
             return self.selenium.find_element(*locator).is_displayed()
-        except NoSuchElementException, ElementNotVisibleException:
+        except (NoSuchElementException, ElementNotVisibleException):
             return False
 
     def get_url_current_page(self):
