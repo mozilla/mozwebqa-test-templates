@@ -45,7 +45,7 @@ class MySiteHomePage(Base):
         def __init__(self, testsetup, lookup):
             Page.__init__(self, testsetup)
             self._root_element = self.selenium.find_element(By.CSS_SELECTOR,
-                                          "%s:nth-child(%s)" % (self._home_news_locator[1], lookup))
+                                                            "%s:nth-child(%s)" % (self._home_news_locator[1], lookup))
 
         @property
         def name(self):
