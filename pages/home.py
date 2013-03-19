@@ -26,16 +26,16 @@ class HomePage(Base):
     team_links_list = [
         {
             'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(1) > a'),
-            'url_suffix': '/teams/web-qa/',
-        }, {
-            'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(2) > a'),
             'url_suffix': '/teams/browser-technologies/',
         }, {
-            'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(3) > a'),
+            'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(2) > a'),
             'url_suffix': '/teams/thunderbird/',
         }, {
-            'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(4) > a'),
+            'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(3) > a'),
             'url_suffix': '/teams/automation/',
+        }, {
+            'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(4) > a'),
+            'url_suffix': '/teams/web-qa/',
         }, {
             'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(5) > a'),
             'url_suffix': '/teams/desktop-firefox/',

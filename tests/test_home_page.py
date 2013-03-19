@@ -12,9 +12,10 @@ import requests
 from unittestzero import Assert
 
 from pages.home import HomePage
+from base_test import BaseTest
 
 
-class TestHomePage:
+class TestHomePage(BaseTest):
 
     @pytest.mark.nondestructive
     def test_that_page_has_correct_tagline(self, mozwebqa):
@@ -69,30 +70,26 @@ class TestHomePage:
         bad_links = []
         for link in home_page.team_links_list:
             url = home_page.link_destination(link.get('locator'))
-            response_code = home_page.get_response_code(url)
+            response_code = self.get_response_code(url, mozwebqa)
             if response_code != requests.codes.ok:
                 bad_links.append('%s is not a valid url - status code: %s.' % (url, response_code))
         Assert.equal(0, len(bad_links), '%s bad urls found: ' % len(bad_links) + ', '.join(bad_links))
 
     # This test checks the validity of all links on the page, and doesn't use Selenium
-    # Note: this is just an example and will take a long time to run if you run it against quality.mozilla.org
+    # Note: for the purposes of example, this only checks the first 10 links
     @pytest.mark.skip_selenium
     @pytest.mark.nondestructive
     def test_that_checks_the_validity_of_all_links_on_the_page(self, mozwebqa):
-        home_page = HomePage(mozwebqa)
         url = mozwebqa.base_url
         page_response = requests.get(url, verify=False)
         html = BeautifulStoneSoup(page_response.content)
         bad_links = []
         links = html.findAll('a')
-        for link in links:
+        for count, link in enumerate(links):
             url = self.make_absolute(link['href'], mozwebqa.base_url)
-            response_code = home_page.get_response_code(url)
+            response_code = self.get_response_code(url, mozwebqa)
             if response_code != requests.codes.ok:
                 bad_links.append('%s is not a valid url - status code: %s.' % (url, response_code))
+            if count > 8:
+                break
         Assert.equal(0, len(bad_links), '%s bad urls found: ' % len(bad_links) + ', '.join(bad_links))
-
-    def make_absolute(self, url, base_url):
-        if url.startswith('http'):
-            return url
-        return base_url + url

@@ -32,7 +32,11 @@ class Page(object):
 
     @property
     def page_title(self):
-        """Return the page title from Selenium."""
+        """
+            Return the page title from Selenium.
+            This is different from _page_title,
+            which is defined for a specific page object and is the expected title of the page.
+        """
         WebDriverWait(self.selenium, self.timeout).until(lambda s: self.selenium.title)
         return self.selenium.title
 
@@ -123,15 +127,6 @@ class Page(object):
     def find_elements(self, *locator):
         """Return a list of elements at the specified locator."""
         return self._selenium_root.find_elements(*locator)
-
-    def get_response_code(self, url):
-        """Return the response code for a get request to the specified url."""
-        requests_config = {'max_retries': 5}
-        try:
-            r = requests.get(url, verify=False, allow_redirects=True, config=requests_config, timeout=self.timeout)
-            return r.status_code
-        except requests.Timeout:
-            return 408
 
     def link_destination(self, locator):
         """Return the href attribute of the element at the specified locator."""
