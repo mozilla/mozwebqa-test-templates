@@ -23,22 +23,22 @@ class HomePage(Base):
     _news_items_locator = (By.TAG_NAME, 'article')
 
     # Link locators, which can be used for checking visibility, accuracy and validity of links
-    team_links_list = [
+    getting_started_links_list = [
         {
-            'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(1) > a'),
-            'url_suffix': '/teams/browser-technologies/',
+            'locator': (By.CSS_SELECTOR, 'ul.blogroll > li:nth-of-type(1) > a'),
+            'url_suffix': '/docs/misc/what-is-qa/',
         }, {
-            'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(2) > a'),
-            'url_suffix': '/teams/thunderbird/',
+            'locator': (By.CSS_SELECTOR, 'ul.blogroll > li:nth-of-type(2) > a'),
+            'url_suffix': '/docs/misc/how-can-i-help-test/',
         }, {
-            'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(3) > a'),
-            'url_suffix': '/teams/automation/',
+            'locator': (By.CSS_SELECTOR, 'ul.blogroll > li:nth-of-type(3) > a'),
+            'url_suffix': 'http://widget.mibbit.com/?settings=1b10107157e79b08f2bf99a11f521973&server=irc.mozilla.org&channel=%23qa',
         }, {
-            'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(4) > a'),
-            'url_suffix': '/teams/web-qa/',
+            'locator': (By.CSS_SELECTOR, 'ul.blogroll > li:nth-of-type(4) > a'),
+            'url_suffix': 'http://groups.google.com/group/mozilla.dev.quality/',
         }, {
-            'locator': (By.CSS_SELECTOR, 'ul.teams-list > li:nth-of-type(5) > a'),
-            'url_suffix': '/teams/desktop-firefox/',
+            'locator': (By.CSS_SELECTOR, 'ul.blogroll > li:nth-of-type(5) > a'),
+            'url_suffix': '/docs/misc/faq/',
         }
     ]
 

@@ -43,34 +43,34 @@ class TestHomePage(BaseTest):
 
     # The following 3 tests check for visibilty, accuracy and validity of the team links on the home page
     @pytest.mark.nondestructive
-    def test_that_team_links_are_visible(self, mozwebqa):
+    def test_that_getting_started_links_are_visible(self, mozwebqa):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
         bad_links = []
-        for link in home_page.team_links_list:
+        for link in home_page.getting_started_links_list:
             if not home_page.is_element_visible(*link.get('locator')):
                 bad_links.append('The link at %s is not visible' % link.get('locator')[1:])
         Assert.equal(0, len(bad_links), '%s bad links found: ' % len(bad_links) + ', '.join(bad_links))
 
     @pytest.mark.nondestructive
-    def test_that_team_link_destinations_are_correct(self, mozwebqa):
+    def test_that_getting_started_link_destinations_are_correct(self, mozwebqa):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
         bad_links = []
-        for link in home_page.team_links_list:
+        for link in home_page.getting_started_links_list:
             url = home_page.link_destination(link.get('locator'))
             if not url.endswith(link.get('url_suffix')):
                 bad_links.append('%s does not end with %s' % (url, link.get('url_suffix')))
         Assert.equal(0, len(bad_links), '%s bad links found: ' % len(bad_links) + ', '.join(bad_links))
 
     @pytest.mark.nondestructive
-    def test_that_team_link_urls_are_valid(self, mozwebqa):
+    def test_that_getting_started_link_urls_are_valid(self, mozwebqa):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
         bad_links = []
-        for link in home_page.team_links_list:
+        for link in home_page.getting_started_links_list:
             url = home_page.link_destination(link.get('locator'))
-            response_code = self.get_response_code(url, mozwebqa)
+            response_code = self.get_response_code(url, mozwebqa.timeout)
             if response_code != requests.codes.ok:
                 bad_links.append('%s is not a valid url - status code: %s.' % (url, response_code))
         Assert.equal(0, len(bad_links), '%s bad urls found: ' % len(bad_links) + ', '.join(bad_links))
@@ -85,11 +85,9 @@ class TestHomePage(BaseTest):
         html = BeautifulStoneSoup(page_response.content)
         bad_links = []
         links = html.findAll('a')
-        for count, link in enumerate(links):
+        for index, link in enumerate(links[:10]):
             url = self.make_absolute(link['href'], mozwebqa.base_url)
-            response_code = self.get_response_code(url, mozwebqa)
+            response_code = self.get_response_code(url, mozwebqa.timeout)
             if response_code != requests.codes.ok:
                 bad_links.append('%s is not a valid url - status code: %s.' % (url, response_code))
-            if count > 8:
-                break
         Assert.equal(0, len(bad_links), '%s bad urls found: ' % len(bad_links) + ', '.join(bad_links))
