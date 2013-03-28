@@ -1,10 +1,11 @@
 # This pulls in all the libraries needed to run Selenium tests
 # on Mozilla WebQA projects
 
-PyYAML==3.10
-UnittestZero
+BeautifulSoup==3.2.0    # Only required for doing link checking without Selenium
 py==1.4.9
 pytest==2.2.4
 pytest-mozwebqa==1.0
+PyYAML==3.10
 requests==0.13.3
 selenium
+UnittestZero
