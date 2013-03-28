@@ -30,7 +30,7 @@ class TestHomePage(BaseTest):
         Assert.greater(home_page.news_items_count, 0)
 
     @pytest.mark.nondestructive
-    def test_that_news_items_are_sorrted_in_reverse_chronological_order(self, mozwebqa):
+    def test_that_news_items_are_sorted_in_reverse_chronological_order(self, mozwebqa):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
         news_items = home_page.news_items
