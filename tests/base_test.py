@@ -12,9 +12,10 @@ class BaseTest:
 
     def get_response_code(self, url, timeout):
         """Return the response code for a get request to the specified url."""
-        requests_config = {'max_retries': 5}
+        # this sets max_retries to 5
+        requests.adapters.DEFAULT_RETRIES = 5
         try:
-            r = requests.get(url, verify=False, allow_redirects=True, config=requests_config, timeout=timeout)
+            r = requests.get(url, verify=False, allow_redirects=True, timeout=timeout)
             return r.status_code
         except requests.Timeout:
             return 408
