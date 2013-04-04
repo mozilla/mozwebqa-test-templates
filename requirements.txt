@@ -6,6 +6,6 @@ py==1.4.9
 pytest==2.2.4
 pytest-mozwebqa==1.0
 PyYAML==3.10
-requests==0.13.3
+requests==1.2.0
 selenium
 UnittestZero
