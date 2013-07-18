@@ -43,32 +43,32 @@ class TestHomePage(BaseTest):
 
     # The following 3 tests check for visibilty, accuracy and validity of the team links on the home page
     @pytest.mark.nondestructive
-    def test_that_getting_started_links_are_visible(self, mozwebqa):
+    def test_that_team_list_links_are_visible(self, mozwebqa):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
         bad_links = []
-        for link in home_page.getting_started_links_list:
+        for link in home_page.teams_links_list:
             if not home_page.is_element_visible(*link.get('locator')):
                 bad_links.append('The link at %s is not visible' % link.get('locator')[1:])
         Assert.equal(0, len(bad_links), '%s bad links found: ' % len(bad_links) + ', '.join(bad_links))
 
     @pytest.mark.nondestructive
-    def test_that_getting_started_link_destinations_are_correct(self, mozwebqa):
+    def test_that_team_list_link_destinations_are_correct(self, mozwebqa):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
         bad_links = []
-        for link in home_page.getting_started_links_list:
+        for link in home_page.teams_links_list:
             url = home_page.link_destination(link.get('locator'))
             if not url.endswith(link.get('url_suffix')):
                 bad_links.append('%s does not end with %s' % (url, link.get('url_suffix')))
         Assert.equal(0, len(bad_links), '%s bad links found: ' % len(bad_links) + ', '.join(bad_links))
 
     @pytest.mark.nondestructive
-    def test_that_getting_started_link_urls_are_valid(self, mozwebqa):
+    def test_that_team_list_link_urls_are_valid(self, mozwebqa):
         home_page = HomePage(mozwebqa)
         home_page.go_to_page()
         bad_links = []
-        for link in home_page.getting_started_links_list:
+        for link in home_page.teams_links_list:
             url = home_page.link_destination(link.get('locator'))
             response_code = self.get_response_code(url, mozwebqa.timeout)
             if response_code != requests.codes.ok:
