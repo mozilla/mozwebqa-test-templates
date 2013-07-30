@@ -48,7 +48,7 @@ class TestHomePage(BaseTest):
         home_page.go_to_page()
         bad_links = []
         for link in home_page.teams_links_list:
-            if not home_page.is_element_visible(*link.get('locator')):
+            if not home_page.is_element_visible(link.get('locator')):
                 bad_links.append('The link at %s is not visible' % link.get('locator')[1:])
         Assert.equal(0, len(bad_links), '%s bad links found: ' % len(bad_links) + ', '.join(bad_links))
 

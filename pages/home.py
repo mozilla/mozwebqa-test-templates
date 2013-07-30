@@ -52,18 +52,18 @@ class HomePage(Base):
     @property
     def tagline(self):
         """Return the text of the tagline."""
-        return self.find_element(*self._tagline_locator).text
+        return self.find_element(self._tagline_locator).text
 
     @property
     def news_items_count(self):
         """Return the number of news items on the home page."""
-        return len(self.find_elements(*self._news_items_locator))
+        return len(self.find_elements(self._news_items_locator))
 
     @property
     def news_items(self):
         """Return a list of new items, each of which is a single news item from the home page."""
         return [self.NewsItem(self.testsetup, web_element)
-                for web_element in self.find_elements(*self._news_items_locator)]
+                for web_element in self.find_elements(self._news_items_locator)]
 
     class NewsItem(PageRegion):
         """Allows each news item on the home page to be treated as a separate object."""
@@ -77,19 +77,19 @@ class HomePage(Base):
         @property
         def title(self):
             """Return the title of the news item."""
-            return self.find_element(*self._title_locator).text
+            return self.find_element(self._title_locator).text
 
         @property
         def is_post(self):
             """Return True if the item is a post (as opposed to an event)."""
-            return self.is_element_present(*self._entry_posted_locator)
+            return self.is_element_present(self._entry_posted_locator)
 
         @property
         def date_posted(self):
             """Return the date posted as a Python date."""
-            year = self.find_element(*self._year_posted_locator).text
-            month = self.find_element(*self._month_posted_locator).text
-            day = self.find_element(*self._day_posted_locator).text
+            year = self.find_element(self._year_posted_locator).text
+            month = self.find_element(self._month_posted_locator).text
+            day = self.find_element(self._day_posted_locator).text
             time_struct = time.strptime(
                 '%s %s %s' % (year, month, day),
                 '%Y %b %d'
