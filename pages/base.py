@@ -25,13 +25,13 @@ class Base(Page):
         copyright_links_list = [
             {
                 'locator': (By.CSS_SELECTOR, '#copyright a:nth-of-type(1)'),
-                'url_suffix': 'http://www.mozilla.org/privacy-policy.html',
+                'url_suffix': 'http://www.mozilla.com/privacy-policy.html',
             }, {
                 'locator': (By.CSS_SELECTOR, '#copyright a:nth-of-type(2)'),
                 'url_suffix': 'http://www.mozilla.org/about/legal.html'
             }, {
                 'locator': (By.CSS_SELECTOR, '#site-info a.licence'),
-                'url_suffix': 'http://www.mozilla.org/foundation/licensing/website-content.html'
+                'url_suffix': 'http://www.mozilla.org/foundation/licensing/website-content/'
             }, {
                 'locator': (By.LINK_TEXT, 'About'),
                 'url_suffix': '/about/'
