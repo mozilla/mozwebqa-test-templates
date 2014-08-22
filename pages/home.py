@@ -25,23 +25,20 @@ class HomePage(Base):
     # Link locators, which can be used for checking visibility, accuracy and validity of links
     teams_links_list = [
         {
-            'locator': (By.CSS_SELECTOR, '#page-37 > a'),
-            'url_suffix': '/teams/automation/',
-        }, {
             'locator': (By.CSS_SELECTOR, '#page-39 > a'),
             'url_suffix': '/teams/desktop-firefox/',
         }, {
             'locator': (By.CSS_SELECTOR, '#page-40 > a'),
             'url_suffix': '/teams/web-qa/',
         }, {
-            'locator': (By.CSS_SELECTOR, '#page-38528 > a'),
-            'url_suffix': '/teams/thunderbird/',
-        }, {
             'locator': (By.CSS_SELECTOR, '#page-45493 > a'),
             'url_suffix': '/teams/services/',
         }, {
             'locator': (By.CSS_SELECTOR, '#page-45496 > a'),
             'url_suffix': '/teams/mobile/',
+        }, {
+            'locator': (By.CSS_SELECTOR, '#page-47307 > a'),
+            'url_suffix': '/teams/firefox-os-qa/',
         },
     ]
 
