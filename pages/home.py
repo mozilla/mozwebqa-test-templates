@@ -26,7 +26,7 @@ class HomePage(Base):
     teams_links_list = [
         {
             'locator': (By.CSS_SELECTOR, '#page-39 > a'),
-            'url_suffix': '/teams/desktop-firefox/',
+            'url_suffix': '/teams/firefoxqe/',
         }, {
             'locator': (By.CSS_SELECTOR, '#page-40 > a'),
             'url_suffix': '/teams/web-qa/',
